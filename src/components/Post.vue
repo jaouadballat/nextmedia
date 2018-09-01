@@ -1,9 +1,8 @@
 <template>
  <div>
      <swiper ref="awesomeSwiperA" :options="swiperOptionA"  @set-translate="onSetTranslate">
-         <!-- Optional controls -->
       <div class="swiper-pagination"  slot="pagination"></div>
-      <!-- slides -->
+
       <swiper-slide v-for="(post, index) in posts" :key="index">
         <header>
            <div id="back">
@@ -98,7 +97,10 @@ import Api from '../config/Api';
   }
 </script>
 
-<style>
+<style scoped>
+header {
+    margin-top: 30px;
+}
 #logo {
     border-bottom: 1px solid #dfdfdf;
   }
@@ -108,17 +110,19 @@ import Api from '../config/Api';
     width: 20%;
     margin: 0 auto;
     display: block;
+
   }
 
   #menu_logo {
     position: absolute;
-    top: 20px;
+    top: 45px;
     right: 10px;
+
   }
 
   #back {
       position: absolute;
-      top: 15px;
+      top: 45px;
       left: 10px;
       height: 20px;
       width: 20px;
@@ -147,4 +151,7 @@ div#social-link img {
     padding: 20px;
     text-align: end;
 }
+
+
+
 </style>

@@ -99,7 +99,7 @@ import Api from '../config/Api';
 
 <style scoped>
 header {
-    margin-top: 30px;
+    margin-top: 35px;
 }
 #logo {
     border-bottom: 1px solid #dfdfdf;
@@ -150,6 +150,7 @@ div#social-link img {
 #content {
     padding: 20px;
     text-align: end;
+    font-family: cursive;
 }
 
 

@@ -19,10 +19,12 @@
      <div class="card" v-for="(post, index) in posts" :key="index">
        <div class="image-card">
         <button class="category">{{ post.categories[0].title }}</button>
+        <router-link :to="{name: 'post', params: {id: post.id}}" tag="a">
          <img :src="post.thumbnail_images.thumbnail.url" alt="">
+        </router-link>
        </div>
        <div class="body-card">
-         <h1><a :href="post.url" style="color: #000">{{ post.title }}</a></h1>
+         <h1><router-link :to="{name: 'post', params: {id: post.id}}" tag="a" style="color:#000">{{ post.title }}</router-link></h1>
          <p>{{ post.date | moment }}</p>
        </div>
      </div>
@@ -72,7 +74,7 @@ methods: {
     }).catch(error => {
       console.log(error.response.data)
     });
-  },
+  }
 },
 filters: {
   moment (date) {
@@ -147,6 +149,7 @@ filters: {
     border-radius: 5px;
     width: 80px;
     font-weight: 800;
+    cursor: pointer;
   }
 
   .body-card {
